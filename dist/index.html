@@ -5,19 +5,20 @@
 <meta name="description" content="Not Firm $NOTSTOCK on Robinhood Chain. Don't work for the firm. Let the firm work for you."/>
 <meta property="og:title" content="Not Firm | $NOTSTOCK"/>
 <meta property="og:description" content="Don't work for the firm. Let the firm work for you."/>
-<meta property="og:image" content="./img/toad.webp"/>
+<meta property="og:image" content="./img/toad.webp?v=p1112"/>
 <link rel="icon" href="./favicon.png" type="image/png"/>
 <link rel="preload" href="./fonts/playfair-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="./style.css"/>
+<link rel="stylesheet" href="./style.css?v=p1112d"/>
 </head><body>
 <header class="top">
-  <a class="brand" href="#"><img src="./img/toad.webp" alt="" width="34" height="34"/><b>Not Firm</b></a>
-  <span class="net" id="net">Robinhood Chain · Block …</span>
+  <a class="brand" href="#/"><img src="./img/toad.webp?v=p1112" alt="" width="34" height="34"/><b>Not Firm</b></a>
+  <nav class="nav" id="nav" aria-label="Pages"><a href="#/" data-r="home">Home</a><a href="#/token" data-r="token">Token</a><a href="#/pools" data-r="pools">Pools</a><a href="#/stake" data-r="stake">Stake</a><a href="#/contracts" data-r="contracts">Contracts</a></nav>
   <button class="btn ghost" id="connect">Connect</button>
 </header>
 <div class="tape" id="tape-box" hidden><div class="tape-in" id="tape"></div></div>
 
 <main>
+<div class="page" data-page="home">
 <section class="hero">
   <div class="hero-art" aria-hidden="true">
     <svg class="facade" viewBox="0 0 800 600" preserveAspectRatio="xMidYMax meet">
@@ -48,134 +49,153 @@
         <rect x="64" y="522" width="672" height="18"/><rect x="40" y="540" width="720" height="22"/><rect x="16" y="562" width="768" height="26"/>
       </g>
     </svg>
-    <img class="toad" src="./img/toad-cut.webp" alt="Not Firm toad trader in a pinstripe suit" width="640" height="587"/>
+    <img class="toad" src="./img/toad-cut.webp?v=p1112" alt="Not Firm toad trader in a pinstripe suit" width="640" height="587"/>
   </div>
   <div class="hero-text">
-    <div class="eyebrow"><span>$NOTSTOCK</span><i></i><span>Robinhood Chain</span><i></i><span>Meme coin</span></div>
     <h1>Not Firm</h1>
     <p class="slogan">Don't work for the firm. Let the firm work for you.</p>
-    <p class="what" id="what"><b>A meme coin that runs its own market-making desk.</b> Every trade pays the firm a fee: it buys back and burns NOTSTOCK and keeps adding liquidity. Holders stake and vote which pools the desk opens next.</p>
+    <p class="what" id="what">A meme coin that runs its own market-making desk.</p>
     <div class="stats">
       <div class="stat"><span>Price</span><b id="s-price">…</b></div>
       <div class="stat"><span>FDV</span><b id="s-fdv">…</b></div>
       <div class="stat"><span>Holders</span><b id="s-holders">…</b></div>
     </div>
-    <div class="cta"><a class="btn buy" id="buy" target="_blank" rel="noopener">Buy NOTSTOCK</a><a class="btn stake" id="stake" href="#gov">Stake NOTSTOCK</a></div>
+    <div class="cta"><a class="btn buy" id="buy" target="_blank" rel="noopener">Buy NOTSTOCK</a><a class="btn stake" id="stake" href="#/stake">Stake NOTSTOCK</a></div>
     <button class="ca" id="ca" type="button"><span class="ca-l">Token</span><code id="ca-addr">0x86bf…d892</code><span class="ca-c" id="ca-c">Copy</span></button>
   </div>
 </section>
 
-<section class="grid">
-
-<article class="card wide cert" id="how">
-  <div class="cert-in">
-    <div class="cert-top"><span>Statement of operations</span><span>$NOTSTOCK</span></div>
-    <h2>How the firm works</h2>
-    <ol class="how3">
-      <li><em>I</em><img src="./img/s1.webp" alt="" loading="lazy" width="320" height="320"/><div><b>Every trade pays the firm</b><span>1% of each trade → FirmVault</span></div></li>
-      <li><em>II</em><img src="./img/s2.webp" alt="" loading="lazy" width="320" height="320"/><div><b>The firm buys back and burns</b><span>NOTSTOCK → 0x…dEaD · more liquidity</span></div></li>
-      <li><em>III</em><img src="./img/s3.webp" alt="" loading="lazy" width="320" height="320"/><div><b>Holders vote</b><span>Stake NOTSTOCK · pick the next pools</span></div></li>
-    </ol>
-    <div class="ledgers">
-      <table class="rep">
-        <caption>Fee split</caption>
-        <tbody>
-          <tr class="hd"><th>Pool fee, every trade</th><td>1.25%</td></tr>
-          <tr><th>To FirmVault</th><td>1%</td></tr>
-          <tr><th>To network</th><td>0.25%</td></tr>
-          <tr class="hd"><th>FirmVault IMD</th><td>100%</td></tr>
-          <tr><th>Buyback &amp; burn</th><td>25%</td></tr>
-          <tr><th>Treasury</th><td>25%</td></tr>
-          <tr><th>Top up pools</th><td>25%</td></tr>
-          <tr><th>New pools</th><td>25%</td></tr>
-        </tbody>
-      </table>
-      <table class="rep">
-        <caption>Supply after setup</caption>
-        <tbody>
-          <tr class="hd"><th>Total NOTSTOCK</th><td>1B</td></tr>
-          <tr><th>LP Desk</th><td>50%</td></tr>
-          <tr><th>Pool</th><td>30%</td></tr>
-          <tr><th>Swarm airdrop</th><td>10%</td></tr>
-          <tr><th>Dev wallet</th><td>10%</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="fl-note">NOTSTOCK fees → Burner → 0x…dEaD</p>
-  </div>
-</article>
-
-<article class="card" id="vault">
-  <h2><small>Desk I</small>FirmVault</h2>
-  <dl class="kv">
-    <dt>Buyback bucket</dt><dd id="v-bucket">…</dd>
-    <dt>Undistributed IMD</dt><dd id="v-imd">…</dd>
-    <dt>Undistributed NOTSTOCK</dt><dd id="v-ns">…</dd>
-    <dt>Gets pool fee</dt><dd id="v-req">…</dd>
-  </dl>
-  <div class="row"><button class="btn sm" id="dist-imd">Distribute IMD</button><button class="btn sm" id="dist-ns">Distribute NOTSTOCK</button></div>
-  <p class="why" id="dist-why"></p>
-</article>
-
-<article class="card" id="desk">
-  <h2><small>Desk II</small>LP Desk</h2>
-  <dl class="kv">
-    <dt>Open positions</dt><dd id="d-pos">…</dd>
-    <dt>Pairs</dt><dd id="d-assets">…</dd>
-    <dt>NOTSTOCK free</dt><dd id="d-free">…</dd>
-    <dt>IMD top-up</dt><dd id="d-top">…</dd>
-    <dt>IMD new pools</dt><dd id="d-freeimd">…</dd>
-    <dt>Bootstrap</dt><dd class="w" id="d-boot">…</dd>
-  </dl>
-  <div class="tags" id="d-venues"></div>
-</article>
-
-<article class="card" id="gov">
-  <h2><small>Desk III</small>Stake &amp; vote</h2>
-  <dl class="kv">
-    <dt>Total staked</dt><dd id="g-total">…</dd>
-    <dt>Your stake</dt><dd id="g-mine">…</dd>
-    <dt>Proposals</dt><dd id="g-props">…</dd>
-    <dt>Rules</dt><dd class="w">0.1% to propose · 3% quorum · 3-day vote</dd>
-  </dl>
-  <label class="amt"><input id="g-amt" inputmode="decimal" placeholder="Amount"/><button class="btn sm ghost" id="g-max">Max</button></label>
-  <div class="row"><button class="btn sm" id="g-stake">Stake</button><button class="btn sm ghost" id="g-unstake">Unstake</button></div>
-  <p class="why" id="g-why"></p>
-</article>
-
-<article class="card" id="burn">
-  <h2><small>Desk IV</small>Burn</h2>
-  <dl class="kv">
-    <dt>Burned forever</dt><dd id="b-dead">…</dd>
-    <dt>Waiting in Burner</dt><dd id="b-burner">…</dd>
-    <dt>Your NOTSTOCK</dt><dd id="b-mine">…</dd>
-  </dl>
-  <button class="btn sm" id="b-burn">Burn</button>
-  <label class="amt"><input id="b-amt" inputmode="decimal" placeholder="Amount"/><button class="btn sm ghost" id="b-max">Max</button></label>
-  <button class="btn sm ghost" id="b-dep">Deposit to Burner</button>
-  <p class="why" id="b-why"></p>
-</article>
-
-<article class="card wide" id="supply">
-  <h2><small>Holdings report</small>Where 1B NOTSTOCK sits</h2>
-  <div class="bars" id="bars"></div>
-  <figure class="card-art"><img src="./img/m4.webp" alt="" loading="lazy" width="560" height="397"/></figure>
-</article>
-
-<article class="card wide" id="setup">
-  <h2><small>Opening the books</small>Setup</h2>
-  <ol class="steps" id="steps"></ol>
-  <p class="why" id="s-why"></p>
-</article>
-
-<article class="card wide" id="contracts">
-  <h2><small>Registry</small>Contracts</h2>
-  <ul class="addrs" id="addrs"></ul>
-</article>
-
+<section class="blk" id="how">
+  <h2>How the firm works</h2>
+  <ol class="how3">
+    <li><img src="./img/s1.webp?v=p1112" alt="" width="640" height="480"/><b>Every trade pays the firm</b><span>1% of every trade goes to the firm.</span></li>
+    <li><img src="./img/s2.webp?v=p1112" alt="" width="640" height="480"/><b>The firm buys back and burns</b><span>Bought NOTSTOCK is burned forever.</span></li>
+    <li><img src="./img/s3.webp?v=p1112" alt="" width="640" height="480"/><b>Holders vote</b><span>Stakers decide which pools open next.</span></li>
+  </ol>
 </section>
+
+<section class="blk" id="fee">
+  <h2>Where the fee goes</h2>
+  <div class="fee">
+    <div class="fee-top">1% of every trade</div>
+    <ol class="fee-parts">
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5c2 9 11 12 11 23a11 11 0 0 1-22 0c0-6 3-9 5-12 1 4 3 6 5 6-2-6-1-12 1-17z"/></svg><b>Buyback &amp; burn</b><span>Burned forever</span></li>
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 18 24 7l18 11M9 18v20m10-20v20m10-20v20m10-20v20M5 41h38"/></svg><b>Treasury</b><span>Held by the firm</span></li>
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6c6 9 12 15 12 23a12 12 0 0 1-24 0c0-8 6-14 12-23zM24 24v12m-6-6h12"/></svg><b>Top up pools</b><span>Deepens live pools</span></li>
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="20" cy="26" r="12"/><path d="M36 6v12m-6-6h12"/></svg><b>New pools</b><span>Opens new pairs</span></li>
+    </ol>
+    <p class="fee-note">Four equal parts.</p>
+    <p class="fee-swarm"><span>0.25% of every trade</span><b>IMD Swarm</b><a href="https://imd.fun" target="_blank" rel="noopener">imd.fun</a></p>
+  </div>
+</section>
+
+<section class="blk" id="go">
+  <h2>Inside the firm</h2>
+  <div class="go3">
+    <a class="go" href="#/token"><span class="go-t">Token</span><span class="go-l">Burned forever</span><b id="h-burn">…</b><span class="go-a">Where every NOTSTOCK is</span></a>
+    <a class="go" href="#/pools"><span class="go-t">Pools</span><span class="go-l">LP Desk positions</span><b id="h-pos">…</b><span class="go-a">Ranges, tokens, fees</span></a>
+    <a class="go" href="#/stake"><span class="go-t">Stake</span><span class="go-l">Total staked</span><b id="h-stake">…</b><span class="go-a">Vote on new pools</span></a>
+  </div>
+</section>
+</div>
+
+<div class="page" data-page="token" hidden>
+<section class="blk first">
+  <h2>Where every NOTSTOCK is</h2>
+  <div class="tok">
+    <div class="tok-sum">
+      <p class="tok-k">Total supply</p><p class="tok-v">1,000,000,000 NOTSTOCK</p>
+      <div class="stack" id="stack" aria-hidden="true"></div>
+      <div class="tok-burn"><span>Burned forever</span><b id="t-burn">…</b></div>
+      <p class="tok-blk" id="t-blk">Read from chain</p>
+    </div>
+    <ol class="tok-list" id="tok-list"><li class="tl-wait">Loading from chain…</li></ol>
+  </div>
+  <p class="tok-note" id="t-note" hidden></p>
+</section>
+</div>
+
+<div class="page" data-page="pools" hidden>
+<section class="blk first">
+  <h2>Pools</h2>
+  <div class="mainpool">
+    <div class="mp-h"><b>NOTSTOCK / IMD</b><span>Main pool · Uniswap v4 · 1% fee</span></div>
+    <dl class="mp-kv">
+      <div><dt>Price of 1 NOTSTOCK</dt><dd id="p-price">…</dd></div>
+      <div><dt>NOTSTOCK in Uniswap v4</dt><dd id="p-liq">…</dd></div>
+      <div><dt>Fee income to FirmVault</dt><dd id="p-fees">…</dd></div>
+    </dl>
+  </div>
+  <h3 class="pos-h">LP Desk positions</h3>
+  <p class="pos-sub" id="pos-sub">Loading from chain…</p>
+  <div class="pos-grid" id="pos-grid"></div>
+</section>
+</div>
+
+<div class="page" data-page="stake" hidden>
+<section class="blk first" id="gov">
+  <h2>Stake</h2>
+  <div class="stake-card">
+    <img class="stake-art" src="./img/m4.webp?v=p1112" alt="" width="640" height="480"/>
+    <div class="stake-body">
+      <p class="stake-line">Stakers vote which pools open next.</p>
+      <p class="soon" id="g-soon">Staking opens soon</p>
+      <div class="stake-form" id="g-form" hidden>
+        <div class="stake-total"><span>Total staked</span><b id="g-total">…</b></div>
+        <label class="amt"><input id="g-amt" inputmode="decimal" placeholder="Amount" aria-label="Amount"/><button class="btn sm ghost" id="g-max" type="button">Max</button></label>
+        <p class="bal">Balance: <span id="g-bal">Connect wallet</span> · Staked: <span id="g-mine">…</span></p>
+        <div class="row"><button class="btn" id="g-stake">Stake</button><button class="btn ghost" id="g-unstake">Unstake</button></div>
+        <p class="why" id="g-why"></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="blk">
+  <h2>What votes decide</h2>
+  <ol class="votes">
+    <li><b>Open a new pool</b><span>Pick the pair and the price range for the desk.</span></li>
+    <li><b>Add a token</b><span>Let the desk pair NOTSTOCK with a new token.</span></li>
+    <li><b>Add a venue</b><span>Let the desk open pools on another exchange.</span></li>
+    <li><b>Go to another chain</b><span>Send desk NOTSTOCK to a desk on another chain.</span></li>
+  </ol>
+  <p class="vote-rules">0.1% of supply to propose · 3% quorum · 3-day vote</p>
+</section>
+</div>
+
+<div class="page" data-page="contracts" hidden>
+<section class="blk first">
+  <h2>Contracts</h2>
+  <ul class="addrs" id="addrs"></ul>
+</section>
+<section class="blk sm">
+  <h3 class="pos-h">Desk modules</h3>
+  <ul class="mods" id="mods"></ul>
+</section>
+<section class="blk sm">
+  <details class="fold" id="ops"><summary>Operator</summary>
+    <div class="ops">
+      <section class="op wide" id="setup"><h3>Setup</h3><ol class="steps" id="steps"></ol><p class="why" id="s-why"></p></section>
+      <section class="op" id="vault"><h3>FirmVault</h3>
+        <dl class="kv"><dt>Buyback bucket</dt><dd id="v-bucket">…</dd><dt>Undistributed IMD</dt><dd id="v-imd">…</dd><dt>Undistributed NOTSTOCK</dt><dd id="v-ns">…</dd><dt>Gets pool fee</dt><dd id="v-req">…</dd></dl>
+        <div class="row"><button class="btn sm" id="dist-imd">Distribute IMD</button><button class="btn sm" id="dist-ns">Distribute NOTSTOCK</button></div>
+        <p class="why" id="dist-why"></p></section>
+      <section class="op" id="desk"><h3>LP Desk</h3>
+        <dl class="kv"><dt>Open positions</dt><dd id="d-pos">…</dd><dt>Pairs</dt><dd id="d-assets">…</dd><dt>NOTSTOCK free</dt><dd id="d-free">…</dd><dt>IMD top-up</dt><dd id="d-top">…</dd><dt>IMD new pools</dt><dd id="d-freeimd">…</dd><dt>Bootstrap</dt><dd class="w" id="d-boot">…</dd><dt>Proposals</dt><dd id="g-props">…</dd><dt>Vote rules</dt><dd class="w">0.1% to propose · 3% quorum · 3-day vote</dd></dl>
+        <div class="tags" id="d-venues"></div></section>
+      <section class="op" id="burn"><h3>Burner</h3>
+        <dl class="kv"><dt>Burned forever</dt><dd id="b-dead">…</dd><dt>Waiting in Burner</dt><dd id="b-burner">…</dd><dt>Your NOTSTOCK</dt><dd id="b-mine">…</dd></dl>
+        <label class="amt"><input id="b-amt" inputmode="decimal" placeholder="Amount" aria-label="Amount"/><button class="btn sm ghost" id="b-max" type="button">Max</button></label>
+        <div class="row"><button class="btn sm ghost" id="b-dep">Deposit to Burner</button><button class="btn sm" id="b-burn">Burn</button></div>
+        <p class="why" id="b-why"></p></section>
+    </div>
+  </details>
+</section>
+</div>
 </main>
-<footer class="foot"><div class="rule"></div><b>Not Firm</b><span>$NOTSTOCK · Robinhood Chain 4663</span></footer>
+
+<footer class="foot">
+  <div class="foot-top"><b>Not Firm</b><span class="foot-r"><a href="#/contracts">Contracts</a><a id="explorer" target="_blank" rel="noopener">NOTSTOCK on explorer</a></span></div>
+</footer>
 <div class="toast" id="toast" hidden></div>
-<script src="./app.js"></script>
+<script src="./app.js?v=p1112d"></script>
 </body></html>
