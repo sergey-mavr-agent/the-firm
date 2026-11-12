@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#070b1c"/>
+<title>Not Firm | $NOTSTOCK</title>
+<meta name="description" content="Not Firm $NOTSTOCK on Robinhood Chain. Don't work for the firm. Let the firm work for you."/>
+<meta property="og:title" content="Not Firm | $NOTSTOCK"/>
+<meta property="og:description" content="Don't work for the firm. Let the firm work for you."/>
+<meta property="og:image" content="./img/toad.webp"/>
+<link rel="icon" href="./favicon.png" type="image/png"/>
+<link rel="preload" href="./fonts/playfair-display-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="./style.css"/>
+</head><body>
+<header class="top">
+  <a class="brand" href="#"><img src="./img/toad.webp" alt="" width="34" height="34"/><b>Not Firm</b></a>
+  <span class="net" id="net">Robinhood Chain · Block …</span>
+  <button class="btn ghost" id="connect">Connect</button>
+</header>
+<div class="tape" id="tape-box" hidden><div class="tape-in" id="tape"></div></div>
+
+<main>
+<section class="hero">
+  <div class="hero-art" aria-hidden="true">
+    <svg class="facade" viewBox="0 0 800 600" preserveAspectRatio="xMidYMax meet">
+      <defs>
+        <linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3dc9a"/><stop offset=".5" stop-color="#c9a24c"/><stop offset="1" stop-color="#8a6a26"/></linearGradient>
+        <radialGradient id="glow" cx=".5" cy=".62" r=".55"><stop offset="0" stop-color="#1d2d66"/><stop offset="1" stop-color="#070b1c" stop-opacity="0"/></radialGradient>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#c9a24c" stroke-width=".6" opacity=".35"/></pattern>
+      </defs>
+      <rect width="800" height="600" fill="url(#glow)"/>
+      <g class="rays" stroke="#c9a24c" stroke-width="1" opacity=".22">
+        <line x1="400" y1="380" x2="0" y2="120"/><line x1="400" y1="380" x2="60" y2="40"/><line x1="400" y1="380" x2="150" y2="0"/><line x1="400" y1="380" x2="260" y2="0"/><line x1="400" y1="380" x2="400" y2="0"/><line x1="400" y1="380" x2="540" y2="0"/><line x1="400" y1="380" x2="650" y2="0"/><line x1="400" y1="380" x2="740" y2="40"/><line x1="400" y1="380" x2="800" y2="120"/>
+      </g>
+      <g fill="none" stroke="url(#gd)" stroke-width="2">
+        <path d="M70 168 L400 46 L730 168 Z" fill="#0c1430"/>
+        <path d="M108 160 L400 60 L692 160 Z" fill="url(#hatch)" stroke-width="1"/>
+        <circle cx="400" cy="124" r="26" fill="#0c1430"/><circle cx="400" cy="124" r="19" stroke-width="1"/>
+        <text x="400" y="133" text-anchor="middle" fill="#e6c77a" stroke="none" font-family="PF,Georgia,serif" font-weight="900" font-size="26">$</text>
+        <rect x="58" y="168" width="684" height="20" fill="#0c1430"/>
+        <rect x="74" y="188" width="652" height="44" fill="#0c1430"/>
+        <text x="400" y="220" text-anchor="middle" fill="#e6c77a" stroke="none" font-family="PF,Georgia,serif" font-weight="700" font-size="26" letter-spacing="14">NOT FIRM</text>
+        <rect x="58" y="232" width="684" height="14" fill="#0c1430"/>
+      </g>
+      <g class="cols" stroke="url(#gd)" stroke-width="1.6" fill="#0a1128">
+        <g id="col"><rect x="92" y="246" width="64" height="14"/><rect x="98" y="260" width="52" height="250"/><line x1="111" y1="264" x2="111" y2="506"/><line x1="124" y1="264" x2="124" y2="506"/><line x1="137" y1="264" x2="137" y2="506"/><rect x="92" y="510" width="64" height="12"/></g>
+        <use href="#col" x="104"/><use href="#col" x="208"/><use href="#col" x="344"/><use href="#col" x="448"/><use href="#col" x="552"/>
+      </g>
+      <g fill="#0c1430" stroke="url(#gd)" stroke-width="1.6">
+        <rect x="64" y="522" width="672" height="18"/><rect x="40" y="540" width="720" height="22"/><rect x="16" y="562" width="768" height="26"/>
+      </g>
+    </svg>
+    <img class="toad" src="./img/toad-cut.webp" alt="Not Firm toad trader in a pinstripe suit" width="640" height="587"/>
+  </div>
+  <div class="hero-text">
+    <div class="eyebrow"><span>$NOTSTOCK</span><i></i><span>Robinhood Chain</span><i></i><span>Meme coin</span></div>
+    <h1>Not Firm</h1>
+    <p class="slogan">Don't work for the firm. Let the firm work for you.</p>
+    <p class="what" id="what"><b>A meme coin that runs its own market-making desk.</b> Every trade pays the firm a fee: it buys back and burns NOTSTOCK and keeps adding liquidity. Holders stake and vote which pools the desk opens next.</p>
+    <div class="stats">
+      <div class="stat"><span>Price</span><b id="s-price">…</b></div>
+      <div class="stat"><span>FDV</span><b id="s-fdv">…</b></div>
+      <div class="stat"><span>Holders</span><b id="s-holders">…</b></div>
+    </div>
+    <div class="cta"><a class="btn buy" id="buy" target="_blank" rel="noopener">Buy NOTSTOCK</a><a class="btn stake" id="stake" href="#gov">Stake NOTSTOCK</a></div>
+    <button class="ca" id="ca" type="button"><span class="ca-l">Token</span><code id="ca-addr">0x86bf…d892</code><span class="ca-c" id="ca-c">Copy</span></button>
+  </div>
+</section>
+
+<section class="grid">
+
+<article class="card wide cert" id="how">
+  <div class="cert-in">
+    <div class="cert-top"><span>Statement of operations</span><span>$NOTSTOCK</span></div>
+    <h2>How the firm works</h2>
+    <ol class="how3">
+      <li><em>I</em><img src="./img/s1.webp" alt="" loading="lazy" width="320" height="320"/><div><b>Every trade pays the firm</b><span>1% of each trade → FirmVault</span></div></li>
+      <li><em>II</em><img src="./img/s2.webp" alt="" loading="lazy" width="320" height="320"/><div><b>The firm buys back and burns</b><span>NOTSTOCK → 0x…dEaD · more liquidity</span></div></li>
+      <li><em>III</em><img src="./img/s3.webp" alt="" loading="lazy" width="320" height="320"/><div><b>Holders vote</b><span>Stake NOTSTOCK · pick the next pools</span></div></li>
+    </ol>
+    <div class="ledgers">
+      <table class="rep">
+        <caption>Fee split</caption>
+        <tbody>
+          <tr class="hd"><th>Pool fee, every trade</th><td>1.25%</td></tr>
+          <tr><th>To FirmVault</th><td>1%</td></tr>
+          <tr><th>To network</th><td>0.25%</td></tr>
+          <tr class="hd"><th>FirmVault IMD</th><td>100%</td></tr>
+          <tr><th>Buyback &amp; burn</th><td>25%</td></tr>
+          <tr><th>Treasury</th><td>25%</td></tr>
+          <tr><th>Top up pools</th><td>25%</td></tr>
+          <tr><th>New pools</th><td>25%</td></tr>
+        </tbody>
+      </table>
+      <table class="rep">
+        <caption>Supply after setup</caption>
+        <tbody>
+          <tr class="hd"><th>Total NOTSTOCK</th><td>1B</td></tr>
+          <tr><th>LP Desk</th><td>50%</td></tr>
+          <tr><th>Pool</th><td>30%</td></tr>
+          <tr><th>Swarm airdrop</th><td>10%</td></tr>
+          <tr><th>Dev wallet</th><td>10%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fl-note">NOTSTOCK fees → Burner → 0x…dEaD</p>
+  </div>
+</article>
+
+<article class="card" id="vault">
+  <h2><small>Desk I</small>FirmVault</h2>
+  <dl class="kv">
+    <dt>Buyback bucket</dt><dd id="v-bucket">…</dd>
+    <dt>Undistributed IMD</dt><dd id="v-imd">…</dd>
+    <dt>Undistributed NOTSTOCK</dt><dd id="v-ns">…</dd>
+    <dt>Gets pool fee</dt><dd id="v-req">…</dd>
+  </dl>
+  <div class="row"><button class="btn sm" id="dist-imd">Distribute IMD</button><button class="btn sm" id="dist-ns">Distribute NOTSTOCK</button></div>
+  <p class="why" id="dist-why"></p>
+</article>
+
+<article class="card" id="desk">
+  <h2><small>Desk II</small>LP Desk</h2>
+  <dl class="kv">
+    <dt>Open positions</dt><dd id="d-pos">…</dd>
+    <dt>Pairs</dt><dd id="d-assets">…</dd>
+    <dt>NOTSTOCK free</dt><dd id="d-free">…</dd>
+    <dt>IMD top-up</dt><dd id="d-top">…</dd>
+    <dt>IMD new pools</dt><dd id="d-freeimd">…</dd>
+    <dt>Bootstrap</dt><dd class="w" id="d-boot">…</dd>
+  </dl>
+  <div class="tags" id="d-venues"></div>
+</article>
+
+<article class="card" id="gov">
+  <h2><small>Desk III</small>Stake &amp; vote</h2>
+  <dl class="kv">
+    <dt>Total staked</dt><dd id="g-total">…</dd>
+    <dt>Your stake</dt><dd id="g-mine">…</dd>
+    <dt>Proposals</dt><dd id="g-props">…</dd>
+    <dt>Rules</dt><dd class="w">0.1% to propose · 3% quorum · 3-day vote</dd>
+  </dl>
+  <label class="amt"><input id="g-amt" inputmode="decimal" placeholder="Amount"/><button class="btn sm ghost" id="g-max">Max</button></label>
+  <div class="row"><button class="btn sm" id="g-stake">Stake</button><button class="btn sm ghost" id="g-unstake">Unstake</button></div>
+  <p class="why" id="g-why"></p>
+</article>
+
+<article class="card" id="burn">
+  <h2><small>Desk IV</small>Burn</h2>
+  <dl class="kv">
+    <dt>Burned forever</dt><dd id="b-dead">…</dd>
+    <dt>Waiting in Burner</dt><dd id="b-burner">…</dd>
+    <dt>Your NOTSTOCK</dt><dd id="b-mine">…</dd>
+  </dl>
+  <button class="btn sm" id="b-burn">Burn</button>
+  <label class="amt"><input id="b-amt" inputmode="decimal" placeholder="Amount"/><button class="btn sm ghost" id="b-max">Max</button></label>
+  <button class="btn sm ghost" id="b-dep">Deposit to Burner</button>
+  <p class="why" id="b-why"></p>
+</article>
+
+<article class="card wide" id="supply">
+  <h2><small>Holdings report</small>Where 1B NOTSTOCK sits</h2>
+  <div class="bars" id="bars"></div>
+  <figure class="card-art"><img src="./img/m4.webp" alt="" loading="lazy" width="560" height="397"/></figure>
+</article>
+
+<article class="card wide" id="setup">
+  <h2><small>Opening the books</small>Setup</h2>
+  <ol class="steps" id="steps"></ol>
+  <p class="why" id="s-why"></p>
+</article>
+
+<article class="card wide" id="contracts">
+  <h2><small>Registry</small>Contracts</h2>
+  <ul class="addrs" id="addrs"></ul>
+</article>
+
+</section>
+</main>
+<footer class="foot"><div class="rule"></div><b>Not Firm</b><span>$NOTSTOCK · Robinhood Chain 4663</span></footer>
+<div class="toast" id="toast" hidden></div>
+<script src="./app.js"></script>
+</body></html>
